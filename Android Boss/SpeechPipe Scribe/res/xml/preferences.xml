@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory
+        android:title="Connection Settings">
+        <Preference
+            android:title="Scan Wi-Fi"
+            android:summary="Scans for computers on the network so you don't have to type in their IP address manually"
+            android:key="action_scanWiFi" />
+        <EditTextPreference
+            android:name="Recipient Host/IP"
+            android:summary="Enter the computer name or IP you wish to receive the text"
+            android:defaultValue="192.168.0.101"
+            android:title="Hostname or IP Address"
+            android:key="ipPref" />
+    </PreferenceCategory>
+       <PreferenceCategory
+        android:title="Terminal Settings">
+        <ListPreference
+            android:name="Operating system"
+            android:summary="Choosing an OS here will apply defaults to the remaining terminal settings."
+            android:title="Operating system"
+            android:key="osPref"
+            android:defaultValue="Windows"
+            android:entries="@array/osArray"
+            android:entryValues="@array/osArray" />
+        <EditTextPreference
+            android:name="Backspaces to erase first edit"
+            android:summary="How many additional backspaces to send if editing the speech-to-text"
+            android:title="Backspaces to erase first edit"
+            android:defaultValue="1"
+            android:key="firstBackspacePref" />
+        <EditTextPreference
+            android:name="Backspaces to erase subsequent edits"
+            android:summary="How many additional backspaces to send if editing the edited text"
+            android:title="Backspaces to erase subsequent edits"
+            android:defaultValue="2"
+            android:key="secondBackspacePref" />
+        <CheckBoxPreference
+            android:name="Send line breaks?"
+            android:summary="Simulate pressing the Enter key each time you send or resend a command"
+            android:title="Send line breaks?"
+            android:key="lineBreakSendPref" />
+        <ListPreference
+            android:name="Line break style"
+            android:summary="Some terminals represent line breaks differently.  Choose the kind your terminal needs here."
+            android:title="Line break style"
+            android:key="lineBreakStylePref"
+            android:defaultValue="CR+LF"
+            android:entries="@array/lineBreakStyleArray"
+            android:entryValues="@array/lineBreakStyleArray" />
+        <ListPreference
+            android:name="Default backspace character"
+            android:summary="Some terminals require Ctrl+H or Del instead of Bksp.  Select that setting here."
+            android:title="Default backspace character"
+            android:key="backspaceCharacterPref"
+            android:defaultValue="Bksp (ASCII 0x08)"
+            android:entries="@array/backspaceStyleArray"
+            android:entryValues="@array/backspaceStyleArray" />
+        <PreferenceScreen
+            android:key="SecondPrefScreen"
+            android:title="Second PreferenceScreen"
+            android:summary="This is a second PreferenceScreen">
+            <EditTextPreference
+                android:name="An other EditText Preference"
+                android:summary="This is a preference in the second PreferenceScreen"
+                android:title="Edit text"
+                android:key="SecondEditTextPref" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Machine Profiles">
+        <RingtonePreference
+            android:name="Ringtone Preference"
+            android:summary="Select a ringtone"
+            android:title="Ringtones"
+            android:key="ringtonePref" />
+        <PreferenceScreen
+            android:key="SecondPrefScreen"
+            android:title="Second PreferenceScreen"
+            android:summary="This is a second PreferenceScreen">
+            <EditTextPreference
+                android:name="An other EditText Preference"
+                android:summary="This is a preference in the second PreferenceScreen"
+                android:title="Edit text"
+                android:key="SecondEditTextPref" />
+        </PreferenceScreen>
+        <Preference
+            android:title="Custom Preference"
+            android:summary="This works almost like a button"
+            android:key="customPref" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Action Settings">
+        <RingtonePreference
+            android:name="Ringtone Preference"
+            android:summary="Select a ringtone"
+            android:title="Ringtones"
+            android:key="ringtonePref" />
+        <PreferenceScreen
+            android:key="SecondPrefScreen"
+            android:title="Second PreferenceScreen"
+            android:summary="This is a second PreferenceScreen">
+            <EditTextPreference
+                android:name="An other EditText Preference"
+                android:summary="This is a preference in the second PreferenceScreen"
+                android:title="Edit text"
+                android:key="SecondEditTextPref" />
+        </PreferenceScreen>
+        <Preference
+            android:title="Custom Preference"
+            android:summary="This works almost like a button"
+            android:key="customPref" />
+    </PreferenceCategory>
+</PreferenceScreen>

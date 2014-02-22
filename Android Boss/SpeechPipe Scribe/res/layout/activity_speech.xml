@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".SpeechActivity" >
+
+    <us.one_dollar.SpeechPipeScribe.MicButton
+        android:id="@+id/mic_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        />
+        
+    <EditText
+        android:id="@+id/edit_speech"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/record_button"
+        android:layout_below="@+id/mic_button"
+        android:ems="10"
+        android:hint="After you speak, correct any errors here and hit Resend."
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/btn_resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edit_speech"
+        android:layout_below="@+id/edit_speech"
+        android:text="Resend" />
+    
+    <Button
+        android:id="@+id/btn_save_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_resend"
+        android:layout_alignBottom="@+id/btn_resend"
+        android:layout_toRightOf="@+id/btn_resend"
+        android:text="Save Action..." />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_save_action"
+        android:text="Connect to Bluetooth..." />
+
+    <TextView
+        android:id="@+id/lblConnectedTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:text="Disconnected"
+        android:textColor="#d4d4d4" />
+    
+</RelativeLayout>
