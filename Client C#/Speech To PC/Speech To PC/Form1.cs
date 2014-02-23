@@ -45,6 +45,12 @@ namespace Speech_To_PC
             var messagePublished = Encoding.ASCII.GetString((byte[])e.Message);
             //MessageHistory += String.Format("{0}: {1}{2}", e.Topic, messagePublished, Environment.NewLine);
             Console.WriteLine(messagePublished);
+            if (messagePublished.Contains("serial")) {
+                String[] messageHalves = messagePublished.Split(':');
+                String messageHalf = messageHalves[1];
+                messageHalf = messageHalf.Substring(1, messageHalf.Length - 3);
+                SendKeys.SendWait(messageHalf);
+            }
         }
 
         private void btnWrite_Click(object sender, EventArgs e)
